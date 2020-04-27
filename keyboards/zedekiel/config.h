@@ -9,7 +9,7 @@
 #define DEVICE_VER      0x0002
 #define MANUFACTURER    UAC
 #define PRODUCT         ATm32U4DFU
-// #define DESCRIPTION     Zedekiel Keyboard
+#define DESCRIPTION     Zedekiel Keyboard
 
 /* key matrix size */
 #define MATRIX_ROWS 5
