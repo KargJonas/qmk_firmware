@@ -6,10 +6,10 @@
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0x03EB
 #define PRODUCT_ID      0x2FF4
-#define DEVICE_VER      0x0001
+#define DEVICE_VER      0x0002
 #define MANUFACTURER    UAC
-#define PRODUCT         Zedekiel
-#define DESCRIPTION     Zedekiel Keyboard
+#define PRODUCT         ATm32U4DFU
+// #define DESCRIPTION     Zedekiel Keyboard
 
 /* key matrix size */
 #define MATRIX_ROWS 5
