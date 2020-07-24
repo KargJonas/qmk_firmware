@@ -6,7 +6,7 @@
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0x03EB
 #define PRODUCT_ID      0x2FF4
-#define DEVICE_VER      0x0002
+#define DEVICE_VER      0x0003
 #define MANUFACTURER    UAC
 #define PRODUCT         ATm32U4DFU
 #define DESCRIPTION     Zedekiel Keyboard
@@ -28,8 +28,9 @@
 #define SCL_PIN   D0
 #define ADC11_PIN B4
 
+
 /* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION ROW2COL
+#define DIODE_DIRECTION COL2ROW // DONT FORGET to change this to COL2ROW on v0.2
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
