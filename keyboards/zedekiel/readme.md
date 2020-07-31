@@ -6,6 +6,7 @@ A 66-key keyboard.
 Config based on AMJ60: https://github.com/KargJonas/qmk_firmware/tree/master/keyboards/amj60
 
 Keyboard Maintainer: Jonas Karg
+
 Hardware Supported: Zedekiel  
 
 Make example for this keyboard (after setting up your build environment):

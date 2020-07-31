@@ -1,4 +1,4 @@
-
+#include "keymap_german.h"
 #include QMK_KEYBOARD_H
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
@@ -15,7 +15,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Keymap _DEF: Default Layer
     * ,---------------------------------------------------------------.
-    * | Esc | ^ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | ß | ´ | Del |
+    * | Esc | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | ß | ´ | ^ | Del |
     * |---------------------------------------------------------------|
     * | Tab | Q | W | E | R | T | Z | U | I | O | P | Ü | + | Backspc |
     * |---------------------------------------------------------------|
@@ -28,16 +28,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     */
 
     [_QWERTY] = LAYOUT(
-      KC_ESC,   KC_GRV,  KC_1, KC_2,  KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0,    KC_MINUS, KC_EQUAL, KC_DEL, \
-      KC_TAB,   KC_Q,    KC_W,    KC_E,  KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSPC, \
-      KC_CAPS,  KC_A,    KC_S,    KC_D,  KC_F, KC_G, KC_H, KC_J, KC_K, KC_L,    KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT,  \
-      KC_LSFT,  KC_LABK, KC_Z,    KC_X,  KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_RALT, \
+      KC_ESC,   DE_1,  DE_2, DE_3, DE_4, DE_5, DE_6, DE_7, DE_8, DE_9, DE_0,    DE_SS,   DE_ACUT, DE_CIRC, KC_DEL, \
+      KC_TAB,   DE_Q,    DE_W,    DE_E,  DE_R, DE_T, DE_Z, DE_U, DE_I, DE_O,    DE_P,    DE_UDIA, DE_PLUS, KC_BSPC, \
+      KC_CAPS,  DE_A,    DE_S,    DE_D,  DE_F, DE_G, DE_H, DE_J, DE_K, DE_L,    DE_ODIA, DE_ADIA, DE_HASH, KC_ENT,  \
+      KC_LSFT,  DE_LABK, DE_Y,    DE_X,  DE_C, DE_V, DE_B, DE_N, DE_M, DE_COMM, DE_DOT,  DE_MINS, KC_RSFT, KC_RALT, \
       KC_LCTL,  KC_LALT, KC_LGUI, KC_SPACE,    MO(_LOWER), KC_RGUI,    MO(_RAISE), KC_RCTL, F(1)
     ),
 
     /* Keymap LOWER: Lower Layer
     * ,---------------------------------------------------------------.
-    * | RST |   | F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|     |
+    * |     | F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|   |     |
     * |---------------------------------------------------------------|
     * |     |   | UP|   |   |   |   |   |   |   |   |   |   |   Del   |
     * |---------------------------------------------------------------|
@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * `---------------------------------------------------------------'
     */
     [_LOWER] = LAYOUT(
-        RESET,   _______, KC_F1,   KC_F2,   KC_F3,    KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, \
+        _______, KC_F1,   KC_F2,   KC_F3,    KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______,  _______, \
         _______, _______, KC_UP,   _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL,  \
         _______, KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______, _______, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______, _______, KC_MPLY, \
         _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Keymap RAISE: Upper Layer
     * ,---------------------------------------------------------------.
-    * |     |   |   |   |   |   |   |   |   |   |   |   |   |   |     |
+    * | RST |EEP|   |   |   |   |   |   |   |   |   |   |   |   | DBG |
     * |---------------------------------------------------------------|
     * |     |   |   |   |   |   |   |   |   |   |   |   |   |         |
     * |---------------------------------------------------------------|
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * `---------------------------------------------------------------'
     */
     [_RAISE] = LAYOUT(
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+        RESET, EEPROM_RESET, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, DEBUG, \
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
