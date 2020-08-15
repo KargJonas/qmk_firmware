@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * |---------------------------------------------------------------|
     * | Sft. | < | Y | x | C | V | B | N | M | , | . | - | Sft. | Mod |
     * |---------------------------------------------------------------|
-    * | Ctrl | Super | Lwe |  Space  | Lwe | Super | Rse | Ctrl | Alt |
+    * | Ctrl | Lwe | Super |  Space  | Lwe | Super | Rse | Ctrl | Alt |
     * `---------------------------------------------------------------'
     */
 
@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,   DE_Q,    DE_W,    DE_E,  DE_R, DE_T, DE_Z, DE_U, DE_I, DE_O,    DE_P,    DE_UDIA, DE_PLUS, KC_BSPC, \
       KC_CAPS,  DE_A,    DE_S,    DE_D,  DE_F, DE_G, DE_H, DE_J, DE_K, DE_L,    DE_ODIA, DE_ADIA, DE_HASH, KC_ENT,  \
       KC_LSFT,  DE_LABK, DE_Y,    DE_X,  DE_C, DE_V, DE_B, DE_N, DE_M, DE_COMM, DE_DOT,  DE_MINS, KC_RSFT, F(1), \
-        KC_LCTL, KC_LGUI, LOWER_AND_RALT,  KC_SPACE,  LOWER_AND_RALT, KC_RGUI,    MO(_RAISE), KC_RCTL, KC_LALT
+      KC_LCTL, LOWER_AND_RALT, KC_LGUI,  KC_SPACE,  LOWER_AND_RALT, KC_RGUI,    MO(_RAISE), KC_RCTL, KC_LALT
     ),
 
     /* Keymap LOWER: Lower Layer
@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * |---------------------------------------------------------------|
     * |      |   |   |   |   |   |   |   |   |   |   |   |      |     |
     * |---------------------------------------------------------------|
-    * | Ctrl | Alt | Super | Space  | Lwe | Super | Rse | Ctrl |      |
+    * |      |     |       |        |     |       |     |      |      |
     * `---------------------------------------------------------------'
     */
     [_LOWER] = LAYOUT(
