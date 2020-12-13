@@ -28,7 +28,6 @@
 #define SCL_PIN   D0
 #define ADC11_PIN B4
 
-
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW // DONT FORGET to change this to COL2ROW on v0.2
 

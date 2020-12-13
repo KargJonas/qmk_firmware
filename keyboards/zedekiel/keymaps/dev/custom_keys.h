@@ -1,10 +1,22 @@
 #include "keymap_german.h"
+#include "quantum.h"
 #include QMK_KEYBOARD_H
 #include "constants.h"
 
+setPinOutput(MISO_PIN);
+
 enum custom_keycodes {
-  LOWER_AND_RALT
+  LOWER_AND_RALT,
+  SPECIAL
 };
+
+void gpioTest(bool isHigh) {
+  if (isHigh) {
+    // writePinHigh(MISO_PIN);
+  } else {
+    // writePinLow(MISO_PIN);
+  }
+}
 
 // Called on "key down" event
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -24,6 +36,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KC_DOWN:
       unregister_code(KC_RALT);
       break;
+
+    case SPECIAL:
+      gpioTest(true);
+      break;
   }
 
   return true;
@@ -38,6 +54,10 @@ void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
         unregister_code(KC_RALT);
         layer_off(_LOWER);
       }
+      break;
+
+    case SPECIAL:
+      gpioTest(false);
       break;
   }
 }
