@@ -3,19 +3,14 @@
 #include QMK_KEYBOARD_H
 #include "constants.h"
 
-setPinOutput(MISO_PIN);
-
 enum custom_keycodes {
   LOWER_AND_RALT,
   SPECIAL
 };
 
 void gpioTest(bool isHigh) {
-  if (isHigh) {
-    // writePinHigh(MISO_PIN);
-  } else {
-    // writePinLow(MISO_PIN);
-  }
+  if (isHigh) writePinHigh(MISO_PIN);
+  else writePinLow(MISO_PIN);
 }
 
 // Called on "key down" event
@@ -38,7 +33,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
 
     case SPECIAL:
-      gpioTest(true);
+      if (record->event.pressed) {
+        gpioTest(true);
+      }
       break;
   }
 
@@ -57,7 +54,9 @@ void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
 
     case SPECIAL:
-      gpioTest(false);
+      if (!record->event.pressed) {
+        gpioTest(false);
+      }
       break;
   }
 }
